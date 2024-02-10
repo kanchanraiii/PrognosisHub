@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 
 # Set page configuration
 st.set_page_config(
-    page_title="Health Assistant",
+    page_title="PrognosisHub",
     layout="wide",
     page_icon="🧑‍⚕️",
     initial_sidebar_state="expanded",
@@ -52,10 +52,11 @@ if selected == 'Home':
     st.title('Welcome to Health Assistant')
     
     st.markdown("""
-    ## Multiple Disease Prediction System
+    ## PrognosisHub-Disease Prediction System
     
-    Welcome to the Multiple Disease Prediction System, created by Kanchan Rai. 
+    Welcome to the PrognosisHub a Multiple Disease Prediction System, created by Kanchan Rai. 
     This application allows you to predict the likelihood of having different diseases: Diabetes, Heart Disease, Parkinson's Disease, and Breast Cancer.
+    The prediction is based on 4 different machine learning models.
     Use the sidebar to navigate to specific prediction pages.
 
     ### Breast Cancer Prediction
