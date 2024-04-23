@@ -310,41 +310,65 @@ elif selected == "Breast Cancer Prediction":
 
     st.title("Breast Cancer Prediction using ML")
 
-    # Features for Breast Cancer prediction
     breast_cancer_features = [
-        'mean radius', 'mean texture', 'mean perimeter', 'mean area', 'mean smoothness',
-        'mean compactness', 'mean concavity', 'mean concave points', 'mean symmetry',
-        'mean fractal dimension', 'radius error', 'texture error', 'perimeter error',
-        'area error', 'smoothness error', 'compactness error', 'concavity error',
-        'concave points error', 'symmetry error', 'fractal dimension error',
-        'worst radius', 'worst texture', 'worst perimeter', 'worst area',
-        'worst smoothness', 'worst compactness', 'worst concavity',
-        'worst concave points', 'worst symmetry', 'worst fractal dimension'
-    ]
+    'mean radius', 'mean texture', 'mean perimeter', 'mean area', 'mean smoothness',
+    'mean compactness', 'mean concavity', 'mean concave points', 'mean symmetry',
+    'mean fractal dimension', 'radius error', 'texture error', 'perimeter error',
+    'area error', 'smoothness error', 'compactness error', 'concavity error',
+    'concave points error', 'symmetry error', 'fractal dimension error',
+    'worst radius', 'worst texture', 'worst perimeter', 'worst area',
+    'worst smoothness', 'worst compactness', 'worst concavity',
+    'worst concave points', 'worst symmetry', 'worst fractal dimension'
+]
 
-    # Organize input fields in columns
-    col1, col2, col3, col4, col5 = st.columns(5)
+# Organize input fields in columns
+col1, col2, col3, col4, col5 = st.columns(5)
 
-    with col1:
-        for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
-            st.text_input(feature)
+with col1:
+    for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
+        st.text_input(feature)
 
-    with col2:
-        for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
-            st.text_input(feature)
+with col2:
+    for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
+        st.text_input(feature)
 
-    with col3:
-        for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
-            st.text_input(feature)
+with col3:
+    for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
+        st.text_input(feature)
 
-    with col4:
-        for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
-            st.text_input(feature)
+with col4:
+    for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
+        st.text_input(feature)
 
-    with col5:
-        for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
-            st.text_input(feature)
+with col5:
+    for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
+        st.text_input(feature)
+To fix this, you need to ensure that each text input widget has a unique ID. You can achieve this by appending the feature name to the widget ID. Here's how you can modify your code:
 
+python
+Copy code
+# Organize input fields in columns
+col1, col2, col3, col4, col5 = st.columns(5)
+
+with col1:
+    for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
+        st.text_input(f"##{feature}")
+
+with col2:
+    for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
+        st.text_input(f"##{feature}")
+
+with col3:
+    for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
+        st.text_input(f"##{feature}")
+
+with col4:
+    for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
+        st.text_input(f"##{feature}")
+
+with col5:
+    for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
+        st.text_input(f"##{feature}")
     # Code for Prediction
     breast_cancer_diagnosis = ''
 
