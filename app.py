@@ -343,10 +343,7 @@ with col4:
 with col5:
     for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
         st.text_input(feature)
-To fix this, you need to ensure that each text input widget has a unique ID. You can achieve this by appending the feature name to the widget ID. Here's how you can modify your code:
 
-python
-Copy code
 # Organize input fields in columns
 col1, col2, col3, col4, col5 = st.columns(5)
 
