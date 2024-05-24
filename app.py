@@ -307,7 +307,6 @@ if selected == "Parkinsons Prediction":
     st.success(parkinsons_diagnosis)
 
 elif selected == "Breast Cancer Prediction":
-
     st.title("Breast Cancer Prediction using ML")
 
     breast_cancer_features = [
@@ -321,51 +320,29 @@ elif selected == "Breast Cancer Prediction":
         'worst concave points', 'worst symmetry', 'worst fractal dimension'
     ]
 
-# Organize input fields in columns
-col1, col2, col3, col4, col5 = st.columns(5)
+    # Organize input fields in columns
+    col1, col2, col3, col4, col5 = st.columns(5)
 
-with col1:
-    for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
-        st.text_input(feature)
+    with col1:
+        for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
+            st.text_input(feature)
 
-with col2:
-    for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
-        st.text_input(feature)
+    with col2:
+        for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
+            st.text_input(feature)
 
-with col3:
-    for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
-        st.text_input(feature)
+    with col3:
+        for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
+            st.text_input(feature)
 
-with col4:
-    for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
-        st.text_input(feature)
+    with col4:
+        for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
+            st.text_input(feature)
 
-with col5:
-    for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
-        st.text_input(feature)
+    with col5:
+        for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
+            st.text_input(feature)
 
-# Organize input fields in columns
-col1, col2, col3, col4, col5 = st.columns(5)
-
-with col1:
-    for feature in breast_cancer_features[:len(breast_cancer_features)//5]:
-        st.text_input(f"##{feature}")
-
-with col2:
-    for feature in breast_cancer_features[len(breast_cancer_features)//5:2*(len(breast_cancer_features)//5)]:
-        st.text_input(f"##{feature}")
-
-with col3:
-    for feature in breast_cancer_features[2*(len(breast_cancer_features)//5):3*(len(breast_cancer_features)//5)]:
-        st.text_input(f"##{feature}")
-
-with col4:
-    for feature in breast_cancer_features[3*(len(breast_cancer_features)//5):4*(len(breast_cancer_features)//5)]:
-        st.text_input(f"##{feature}")
-
-with col5:
-    for feature in breast_cancer_features[4*(len(breast_cancer_features)//5):]:
-        st.text_input(f"##{feature}")
     # Code for Prediction
     breast_cancer_diagnosis = ''
 
