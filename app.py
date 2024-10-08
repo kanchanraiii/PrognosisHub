@@ -11,7 +11,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Set background color
+# Set background color for the webapp
 st.markdown(
     """
     <style>
